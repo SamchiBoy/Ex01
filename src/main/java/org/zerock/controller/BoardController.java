@@ -28,7 +28,7 @@ public class BoardController {
 	 * registerGET(BoardVO board, Model model) throws Exception {
 	 * logger.info("register get..................."); }
 	 */
- 
+
 	@RequestMapping(value = "/register", method = { RequestMethod.POST, RequestMethod.GET })
 	public String registPOST(BoardVO board) throws Exception {
 		System.out.println("This is /register");
