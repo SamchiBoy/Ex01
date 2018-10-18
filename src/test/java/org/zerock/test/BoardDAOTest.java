@@ -14,6 +14,7 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 import org.zerock.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,7 +39,7 @@ public class BoardDAOTest {
 		logger.info(dao.read(1).toString());
 	}*/
 	
-	@Test
+	
 	public void testUpdate() throws Exception{
 		BoardVO board=new BoardVO();
 		board.setBno(1);
@@ -48,17 +49,17 @@ public class BoardDAOTest {
 		dao.delete(1);
 	}
 	
-	/*@Test
+	
 	public void testListPage() throws Exception {
 		int page=1;
 		
 		List<BoardVO> list = dao.listPage(page);
 		for(BoardVO boardVO : list) {
-			logger.info(boardVO.getBno() + " : "+ boardVO.getTitle());
+			//logger.info(boardVO.getBno() + " : "+ boardVO.getTitle());
 		}
-	}*/
+	}
 	
-	@Test
+	
 	public void testListCritera() throws Exception{
 		Criteria cri = new Criteria();
 		cri.setPage(1);
@@ -67,17 +68,17 @@ public class BoardDAOTest {
 		List<BoardVO> list = dao.listCriteria(cri);
 		
 		for(BoardVO boardVO : list) {
-			logger.info(boardVO.getBno()+":"+boardVO.getTitle());
+			//logger.info(boardVO.getBno()+":"+boardVO.getTitle());
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void testURI() throws Exception{
 		UriComponents uriComponents = UriComponentsBuilder.newInstance().path("/board/read").queryParam("bno",12).queryParam("perPageNum", 20).build();
 		
 		logger.info("/board/read?bno=12&perPageNum=20");
 		logger.info(uriComponents.toString());
-	}
+	}*/
 	
 	
 }

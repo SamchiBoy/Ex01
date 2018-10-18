@@ -247,8 +247,8 @@
 									src="/resources/dist/img/user2-160x160.jpg" class="img-circle"
 									alt="User Image" />
 									<p>
-										Samchi Pierce - Web Developer <small>Member since
-											Nov. 2012</small>
+										Samchi Pierce - Web Developer <small>Member since Nov.
+											2012</small>
 									</p></li>
 								<!-- Menu Body -->
 								<li class="user-body">
@@ -311,10 +311,9 @@
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
-					<li><a href="/board/listAll"><i class="fa fa-book"></i>
-							<span>listAll</span></a></li>
-					<li><a href="/board/listPage"><i class="fa fa-book"></i>
-							<span>listPage</span></a></li>
+					<li><a href="/board/listAll"><i class="fa fa-book"></i> <span>listAll</span></a></li>
+					<li><a href="/board/listPage"><i class="fa fa-book"></i> <span>listPage</span></a></li>
+					<li><a href="/sboard/list"><i class="fa fa-book"></i> <span>list(sboard)</span></a></li>
 					<li class="treeview"><a href="#"> <i
 							class="fa fa-dashboard"></i> <span>Dashboard</span> <i
 							class="fa fa-angle-left pull-right"></i>
