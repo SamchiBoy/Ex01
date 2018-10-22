@@ -18,6 +18,7 @@ import org.zerock.service.BoardService;
 @Controller
 @RequestMapping("/board/")
 public class BoardController {
+	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Inject
@@ -55,13 +56,13 @@ public class BoardController {
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public void read(BoardVO board, Model model) throws Exception {
 		System.out.println("This is /read");
 		int bno = board.getBno();
 		System.out.println("read : " + bno);
 		model.addAttribute(service.read(bno));
-	}
+	}*/
 
 	@RequestMapping(value = "/remove", method = { RequestMethod.GET, RequestMethod.POST })
 	public String remove(@RequestParam("bno") int bno, Model model) throws Exception {

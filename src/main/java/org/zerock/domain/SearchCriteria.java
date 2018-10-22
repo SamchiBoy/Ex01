@@ -3,7 +3,7 @@ package org.zerock.domain;
 public class SearchCriteria extends Criteria {
 	private String searchType;
 	private String keyword;
-
+	
 	public String getSearchType() {
 		return searchType;
 	}
