@@ -49,7 +49,7 @@
 			<tr>
 				<td>${boardVO.bno}</td>
 				<td><a
-					href="/sboard/readPage?{pageMaker.makeSearch(pagemaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a></td>
+					href="/sboard/readPage2${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a></td>
 				<td>${boardVO.contents}</td>
 				<td>${boardVO.userId}</td>
 				<td>${boardVO.siteNumber}</td>

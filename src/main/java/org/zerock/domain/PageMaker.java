@@ -55,6 +55,7 @@ public class PageMaker {
 		return uriComponents.toUriString();
 	}
 
+	
 	private String encoding(String keyword) {
 		if (keyword == null || keyword.trim().length() == 0) {
 			return "";
