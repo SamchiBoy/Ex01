@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -67,9 +68,11 @@ public class BoardController {
 	@RequestMapping(value = "/remove", method = { RequestMethod.GET, RequestMethod.POST })
 	public String remove(@RequestParam("bno") int bno, Model model) throws Exception {
 		model.addAttribute("bno", bno); // 이거 응용해서 page=.. 불러와보기
+		
 		service.remove(bno);
-
-		return "redirect:/board/listPage";
+		
+		
+		return "redirect:/sboard/list";
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
