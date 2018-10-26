@@ -1,8 +1,5 @@
 package org.zerock.controller;
 
-import java.awt.event.ActionListener;
-import java.awt.event.WindowListener;
-
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -33,12 +30,14 @@ public class SearchBoardController {
 	public void listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info(cri.toString());
 
-		// model.addAttribute("list", service.listCriteria(cri));
-		model.addAttribute("list", service.listSearchCriteria(cri));
+		
 
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 
+		// model.addAttribute("list", service.listCriteria(cri));
+		model.addAttribute("list", service.listSearchCriteria(cri));
+		
 		// pageMaker.setTotalCount(service.listCountCriteria(cri));
 		pageMaker.setTotalCount(service.listSearchCount(cri));
 

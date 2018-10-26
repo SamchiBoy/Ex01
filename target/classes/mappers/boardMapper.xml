@@ -37,6 +37,7 @@
 	<select id="listPage" resultType="org.zerock.domain.BoardVO">
 		select b.bno, b.title, b.contents, b.userId, b.siteNumber, s.siteLink
 		from boardtable b left join sitetable s on s.siteNumber=b.siteNumber
+
 		<!-- select *from boardtable where bno>0 order by bno desc limit #{page},10 -->
 	</select>
 
@@ -56,36 +57,21 @@
 
 
 
+	<!-- <select id="listSearch" resultType="BoardVO" parameterType="SearchCriteria"> 
+		<![CDATA[select *from boardtable ]]> <if test="searchType !=null"> <if test="searchType 
+		== 't'.toString()"> where bno>0 and title like '%${keyword}%'</if> </if> 
+		<![CDATA[order by bno desc limit #{pageStart}, #{perPageNum}]]> </select> -->
 
+	<!-- resulttype!! -->
 
-
-
-
-
-
-
-
-<!-- 
-
-<select id="listSearch" resultType="BoardVO" parameterType="SearchCriteria">
+	<select id="listSearch" resultType="BoardVO"
+		parameterType="SearchCriteria">
 	
-	<![CDATA[select *from boardtable ]]>
-	<if test="searchType !=null">
-
-			<if test="searchType == 't'.toString()">
-				where bno>0 and title like '%${keyword}%'</if>
-		</if>
-	<![CDATA[order by 
-	bno desc limit #{pageStart}, #{perPageNum}]]>
-	
-	</select> -->
-
-<!-- resulttype!! -->
-
-	<select id="listSearch" resultType="BoardVO"  parameterType="SearchCriteria">
-	
-	<![CDATA[select *from boardtable where bno>0]]>
-	<if test="searchType !=null">
+	<![CDATA[select b.bno, b.title,
+		b.contents, b.userId, b.siteNumber, s.siteLink
+		from boardtable b left
+		join sitetable s on s.siteNumber=b.siteNumber where bno>0]]>
+		<if test="searchType !=null">
 
 			<if test="searchType == 't'.toString()">
 				and title like CONCAT ('%', #{keyword}, '%')</if>
@@ -96,7 +82,8 @@
 
 			<if test="searchType == 'tc'.toString()">
 				and (title like CONCAT ('%', #{keyword}, '%') or
-				contents like
+				contents
+				like
 				CONCAT('%', #{keyword},'%'))</if>
 			<if test="searchType == 'cw'.toString()">
 				and (contents like CONCAT ('%', #{keyword}, '%') or
@@ -104,23 +91,24 @@
 				CONCAT('%', #{keyword},'%'))</if>
 			<if test="searchType == 'tcw'.toString()">
 				and (title like CONCAT ('%', #{keyword}, '%') or
-				contents like
+				contents
+				like
 				CONCAT('%', #{keyword},'%') or writer like CONCAT('%',
 				#{keyword},'%'))</if>
 		</if>
 	<![CDATA[order by 
 	bno desc limit #{pageStart}, #{perPageNum}]]>
-	
-	</select> 
- 
+
+	</select>
+
 
 	<select id="listSearchCount" resultType="int">
 		select count(bno)
 		<if test="searchType !=null">
 
 			<if test="searchType == 't'.toString()">
-				and title like CONCAT ('%', #{keyword}, '%')</if> 
-			
+				and title like CONCAT ('%', #{keyword}, '%')</if>
+
 			<if test="searchType == 'c'.toString()">
 				and contents like CONCAT ('%', #{keyword}, '%')</if>
 			<if test="searchType == 'w'.toString()">
@@ -128,7 +116,8 @@
 
 			<if test="searchType == 'tc'.toString()">
 				and (title like CONCAT ('%', #{keyword}, '%') or
-				contents like
+				contents
+				like
 				CONCAT('%', #{keyword},'%'))</if>
 			<if test="searchType == 'cw'.toString()">
 				and (contents like CONCAT ('%', #{keyword}, '%') or
@@ -136,7 +125,8 @@
 				CONCAT('%', #{keyword},'%'))</if>
 			<if test="searchType == 'tcw'.toString()">
 				and (title like CONCAT ('%', #{keyword}, '%') or
-				contents like
+				contents
+				like
 				CONCAT('%', #{keyword},'%') or writer like CONCAT('%',
 				#{keyword},'%'))</if>
 		</if>
@@ -144,7 +134,7 @@
 	</select>
 
 
-		
+
 
 
 </mapper>

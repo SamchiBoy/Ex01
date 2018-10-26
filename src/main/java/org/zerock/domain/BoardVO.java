@@ -9,7 +9,6 @@ public class BoardVO {
 	private String date_time;
 	private int siteNumber;
 	private String siteLink;
-	private String a;
 	public String getSiteLink() {
 		return siteLink;
 	}
