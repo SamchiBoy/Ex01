@@ -48,9 +48,9 @@
 
 			<tr>
 				<td>${boardVO.bno}</td>
-				<td style="text-overflow: ellipsis; overflow:hidden;" ><a
+				<td style=" text-overflow: ellipsis; overflow:hidden;" ><a
 					href="/sboard/readPage2${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a></td>
-				<td>${boardVO.contents}</td>
+				<td style=" width: 300px; text-overflow: ellipsis; overflow:hidden;">${boardVO.contents}</td>
 				<td>${boardVO.userId}</td>
 				<td>${boardVO.siteNumber}</td>
 				<td>${boardVO.siteLink}</td>
@@ -68,7 +68,7 @@
 </form>
 
 
-<div class="text-center">
+<div class="text-center" >
 	<ul class="pagination">
 
 		<c:if test="${pageMaker.prev }">

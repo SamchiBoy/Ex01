@@ -18,8 +18,13 @@
 
 		<div class="form-group">
 			<label for="exampleInputPassword1">Contents</label>
+			<div style="width: 100px; height: 200px" id="imgdiv01">
+			<span class="fa fa-angle-left"></span>
+			<img src="/resources/dist/img/001.png" width="100px" height="150px">
+			</div>
 			<textarea class="form-control" name="contents" rows="3"
-				readonly="readonly">${boardVO.contents}</textarea>
+				readonly="readonly">${boardVO.contents}
+				</textarea>
 		</div>
 
 		<div class="form-group">

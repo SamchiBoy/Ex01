@@ -30,7 +30,7 @@
 </div>
 
 <!-- /.box-body -->
-<div class="box-footer" style="background-color: #ecf0f5">
+<div class="box-footer" style="background-color: #ecf0f5" >
 
 
 	<div class="row">

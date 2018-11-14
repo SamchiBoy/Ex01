@@ -49,7 +49,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-		return dao.listCriteria(cri);
+		return dao.listCriteria(cri); 
 	}
 	
 	@Override
