@@ -1,10 +1,13 @@
 package org.zerock.controller;
 
-import java.io.IOException;
-import java.util.UUID;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.PageMaker;
@@ -36,7 +37,7 @@ public class BoardController {
 	 * registerGET(BoardVO board, Model model) throws Exception {
 	 * logger.info("register get..................."); }
 	 */
-
+	
 	@RequestMapping(value = "/register", method = { RequestMethod.POST, RequestMethod.GET })
 	public String registPOST(BoardVO board) throws Exception {
 		System.out.println("This is /register");

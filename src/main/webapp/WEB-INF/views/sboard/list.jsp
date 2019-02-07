@@ -38,8 +38,8 @@
 
 	<tr>
 		<th class="col-sm-1">BNO</th>
-		<th class="col-sm-2">TITLE</th>
-		<th class="col-sm-4">CONTENTS</th>
+		<th class="col-sm-5">TITLE</th>
+		<!-- <th class="col-sm-4">CONTENTS</th>  -->
 		<th class="col-sm-1">WRITER</th>
 		<th class="col-sm-1">SITENUMBER</th>
 		<th class="col-sm-3">SITELINK</th>
@@ -50,7 +50,8 @@
 				<td>${boardVO.bno}</td>
 				<td style=" text-overflow: ellipsis; overflow:hidden;" ><a
 					href="/sboard/readPage2${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a></td>
-				<td style=" width: 300px; text-overflow: ellipsis; overflow:hidden;">${boardVO.contents}</td>
+				<!-- <td id="imageTd" style=" width: 300px; text-overflow: ellipsis; overflow:hidden;">${boardVO.contents}</td> -->
+				
 				<td>${boardVO.userId}</td>
 				<td>${boardVO.siteNumber}</td>
 				<td>${boardVO.siteLink}</td>
@@ -110,6 +111,8 @@
 					self.location = "register";
 				});
 			});
+	
+
 </script>
 
 

@@ -19,12 +19,16 @@
 		<div class="form-group">
 			<label for="exampleInputPassword1">Contents</label>
 			<div style="width: 100px; height: 200px" id="imgdiv01">
-			<span class="fa fa-angle-left"></span>
-			<img src="/resources/dist/img/001.png" width="100px" height="150px">
+				<span class="fa fa-angle-left"></span>
 			</div>
-			<textarea class="form-control" name="contents" rows="3"
-				readonly="readonly">${boardVO.contents}
-				</textarea>
+			<table>
+				<%-- <textarea class="form-control" name="contents" rows="3"
+					readonly="readonly">${boardVO.contents}
+				</textarea> --%>
+				<tr>
+					<td>${boardVO.contents}</td>
+				</tr>
+			</table>
 		</div>
 
 		<div class="form-group">
@@ -41,13 +45,21 @@
 		<div class="col-sm-1"></div>
 		<div class="btn-gruop">
 			<!-- <a href="/board/modify?bno=${boardVO.bno}">MODIFY(href OK)</a>-->
-			<button type="button" onClick="javascript:change2('mod2')"
-				class="btn btn-info" name="modifybtn" id="modifybtn">MODIFY</button>
-			<button type="button" onClick="javascript:change2('remove')"
-				class="btn btn-danger">REMOVE</button>
-			<!-- <a href="/board/remove?bno=${boardVO.bno}">REMOVE(href OK)</a> -->
-			<button type="button" onClick="javascript:change2('listPage')"
-				class="btn btn-warning">GO LIST</button>
+
+			<!-- <button type="button" onClick="javascript:change2('mod2')"
+				class="btn btn-info" name="modifybtn" id="modifybtn">MODIFY</button> -->
+
+			
+				<div class="btn btn-modify">
+					<a href="/sboard/modify?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType}&keyword=${cri.keyword}&bno=${boardVO.bno }"
+					><button class="btn btn-primary">modifyPAGE</button></a>
+				</div>
+				<button type="button" onClick="javascript:change2('remove')"
+					class="btn btn-danger">REMOVE</button>
+				<!-- <a href="/board/remove?bno=${boardVO.bno}">REMOVE(href OK)</a> -->
+				<button type="button" onClick="javascript:change2('listPage')"
+					class="btn btn-warning">GO LIST</button>
+			
 
 		</div>
 	</div>
@@ -111,7 +123,7 @@
 		} else if (target2 == 'remove') {
 			u2 = remove;
 			alert("ok! dlt!");
-			
+
 		} else if (target2 == 'listPage') {
 			history.back();
 			history.reload();

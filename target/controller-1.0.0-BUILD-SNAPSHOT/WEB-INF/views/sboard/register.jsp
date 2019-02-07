@@ -21,6 +21,9 @@
 					type="text" name='siteNumber' class="form-control"
 					placeholder="Enter siteNumber">
 			</div>
+			<div class="form-group">
+				
+			</div>
 			<!-- <div class="form-group">
 				<label for="exampleInputbno1">BNO</label> <input type="text"
 					name="bno" class="form-control" placeholder="Enter bno" readonly="readonly">

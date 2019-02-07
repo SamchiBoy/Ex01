@@ -34,7 +34,7 @@
 	</div>
 </form>
 
-<div class="text-center">
+<div class="text-center" >
 	<ul class="pagination">
 
 		<c:if test="${pageMaker.prev }">

@@ -34,7 +34,7 @@
 
 </div>
 
-<table class="table table-boardered">
+<table style="table-layout: fixed" class="table table-boardered">
 
 	<tr>
 		<th class="col-sm-1">BNO</th>
@@ -48,9 +48,9 @@
 
 			<tr>
 				<td>${boardVO.bno}</td>
-				<td><a
+				<td style=" text-overflow: ellipsis; overflow:hidden;" ><a
 					href="/sboard/readPage2${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}">${boardVO.title}</a></td>
-				<td>${boardVO.contents}</td>
+				<td style=" width: 300px; text-overflow: ellipsis; overflow:hidden;">${boardVO.contents}</td>
 				<td>${boardVO.userId}</td>
 				<td>${boardVO.siteNumber}</td>
 				<td>${boardVO.siteLink}</td>
@@ -68,7 +68,7 @@
 </form>
 
 
-<div class="text-center">
+<div class="text-center" >
 	<ul class="pagination">
 
 		<c:if test="${pageMaker.prev }">
@@ -92,21 +92,24 @@
 </div>
 
 <script>
+	$(document).ready(
+			function() {
+				$('#searchBtn').on(
+						"click",
+						function(event) {
+							self.location = "list"
+									+ '${pageMaker.makeQuery(1)}'
+									+ "&searchType="
+									+ $("select option:selected").val()
+									+ "&keyword="
+									+ encodeURIComponent($('#keywordInput')
+											.val());
 
-$(document).ready(
-		function(){
-			$('#searchBtn').on("click",
-			function(event){
-				self.location="list"+'${pageMaker.makeQuery(1)}'
-				+"&searchType="
-				+$("select option:selected").val()
-				+"&keyword="+encodeURIComponent($('#keywordInput').val());
-				
+						});
+				$('#newBtn').on("click", function(evt) {
+					self.location = "register";
+				});
 			});
-			$('#newBtn').on("click",function(evt){
-				self.location="register";
-			});
-		});
 </script>
 
 

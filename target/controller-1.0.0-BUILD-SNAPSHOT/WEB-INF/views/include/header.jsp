@@ -43,7 +43,7 @@
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="/resources/index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a href="/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>Samchi</b> PROJECT</span>
 			</a>
@@ -286,7 +286,7 @@
 				<!-- Sidebar user panel -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="/resources/dist/img/user2-160x160.jpg"
+						<img src="/resources/dist/img/001.png"
 							class="img-circle" alt="User Image" />
 					</div>
 					<div class="pull-left info">

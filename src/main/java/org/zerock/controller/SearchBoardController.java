@@ -45,7 +45,7 @@ public class SearchBoardController {
 	}
 
 	@RequestMapping(value = "/readPage2", method = RequestMethod.GET)
-	public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model)
+	public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") SearchCriteria cri, Model model)
 			throws Exception {
 		
 		model.addAttribute(service.read(bno));
